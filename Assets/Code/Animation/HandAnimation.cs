@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class HandAnimation : MonoBehaviour
@@ -8,7 +9,12 @@ public class HandAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_animator.SetFloat("Grip", m_handInput.GripValue);
-        m_animator.SetFloat("Trigger", m_handInput.TriggerValue);
+        CheckForAnimations();
+    }
+
+    private void CheckForAnimations()
+    {
+        m_animator.Play("Pinch", -1, Math.Clamp(m_handInput.TriggerValue, 0f, 0.95f));
+        m_animator.Play("Grip", -1, Math.Clamp(m_handInput.GripValue, 0f, 0.95f));
     }
 }
