@@ -67,6 +67,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bb407f1fb1a5e674383dde5a676284e0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7248207410889415214}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bb407f1fb1a5e674383dde5a676284e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1806086537890881928}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bb407f1fb1a5e674383dde5a676284e0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7462967719420847320}
   m_SourcePrefab: {fileID: 100100000, guid: bb407f1fb1a5e674383dde5a676284e0, type: 3}
 --- !u!1 &4654428044586208832 stripped
 GameObject:
@@ -95,3 +101,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1806086537890881928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654428044586208832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806df7ae98d31a745a1f60c7ac06b83d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Hand: 1
+  GripValue: 0
+  TriggerValue: 0
+--- !u!114 &7462967719420847320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654428044586208832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc300ae2aa6035146913a5c63baf07a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 7248207410889415214}
+  m_handInput: {fileID: 1806086537890881928}
