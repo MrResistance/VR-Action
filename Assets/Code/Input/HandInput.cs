@@ -11,9 +11,13 @@ public class HandInput : MonoBehaviour
     public event Action<InputAction.CallbackContext> OnGripPressed;
     public event Action<float> OnGripHeld;
     public event Action<InputAction.CallbackContext> OnGripReleased;
+
     public event Action<InputAction.CallbackContext> OnTriggerPressed;
     public event Action<float> OnTriggerHeld;
     public event Action<InputAction.CallbackContext> OnTriggerReleased;
+
+    public event Action<Vector2> OnStickMoved;
+    public event Action OnSecondaryButtonPressed;
 
     public float GripValue;
     public float TriggerValue;
@@ -95,6 +99,18 @@ public class HandInput : MonoBehaviour
         {
             OnTriggerHeld?.Invoke(TriggerValue);
         }
+
+        if (m_XRIDefaultInputActions.CustomLeftHand.SecondaryButton.ReadValue<float>() > 0.95)
+        {
+            OnSecondaryButtonPressed?.Invoke();
+        }
+
+        Vector2 moveInput = m_XRIDefaultInputActions.CustomLeftHand.StickMoved.ReadValue<Vector2>();
+
+        if (moveInput != Vector2.zero)
+        {
+            OnStickMoved?.Invoke(moveInput);
+        }
     }
 
     private void HandleRightInputs()
@@ -104,14 +120,24 @@ public class HandInput : MonoBehaviour
 
         if (m_XRIDefaultInputActions.CustomRightHand.Grip.IsPressed())
         {
-            
             OnGripHeld?.Invoke(GripValue);
         }
 
         if (m_XRIDefaultInputActions.CustomRightHand.Trigger.IsPressed())
         {
-            
             OnTriggerHeld?.Invoke(TriggerValue);
+        }
+
+        if (m_XRIDefaultInputActions.CustomRightHand.SecondaryButton.ReadValue<float>() > 0.95)
+        {
+            OnSecondaryButtonPressed?.Invoke();
+        }
+
+        Vector2 moveInput = m_XRIDefaultInputActions.CustomRightHand.StickMoved.ReadValue<Vector2>();
+
+        if (moveInput != Vector2.zero)
+        {
+            OnStickMoved?.Invoke(moveInput);
         }
     }
 
