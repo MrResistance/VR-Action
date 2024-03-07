@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Small Office.unity
+    path: Assets/Scenes/Islands.unity
     guid: d7d389fe32a37944486171bb8821fc1f
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
